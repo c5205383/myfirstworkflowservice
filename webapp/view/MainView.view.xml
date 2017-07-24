@@ -1,0 +1,13 @@
+<mvc:View controllerName="com.sap.workflow.demo.controller.MainView"
+   xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true"  xmlns="sap.m" height="95%">
+	<App id="idAppControl">
+		<pages>
+		 <Page title="Workflow Start UI">
+			    <content>
+			       	<Label text="Home Page"/>
+			    </content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,135 @@
+{
+	"_version": "1.5.0",
+	"sap.app": {
+		"id": "mysecondui5project",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"resources": "resources.json",
+		"ach": "ach",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "com.sap.workflow.demo.view.MainView",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.38.16",
+			"libs": {
+				"sap.ui.core": {
+					"minVersion": "1.38.16"
+				},
+				"sap.m": {
+					"minVersion": "1.38.16"
+				},
+				"sap.ui.layout": {
+					"minVersion": "1.38.16"
+				},
+				"sap.ushell": {
+					"minVersion": "1.38.16"
+				},
+				"sap.collaboration": {
+					"minVersion": "1.38.16"
+				},
+				"sap.ui.comp": {
+					"minVersion": "1.38.16"
+				},
+				"sap.uxap": {
+					"minVersion": "1.38.16"
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.sap.workflow.demo.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "sap.xm.view",
+				"controlId": "idAppControl",
+				"controlAggregation": "pages",
+				"transition": "flip"
+			},
+			"routes": [
+				{
+					"pattern": "startworkflow",
+					"name": "workflow_start",
+					"target": "startworkflow"
+				},
+				{
+					"pattern": "managerapprove",
+					"name": "manager_approve",
+					"target": "managerapprove"
+				},
+				{
+					"pattern": "leaderapprove",
+					"name": "leader_approve",
+					"target": "leaderapprove"
+				}
+			],
+			"targets": {
+				"startworkflow": {
+					"viewPath": "com.sap.workflow.demo.view",
+					"viewName": "StartWorkFlow"
+				},
+				"managerapprove": {
+					"viewPath": "com.sap.workflow.demo.view",
+					"viewName": "ManagerApprove"
+				},
+				"leaderapprove": {
+					"viewPath": "com.sap.workflow.demo.view",
+					"viewName": "LeaderApprove"
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}

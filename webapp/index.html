@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="UTF-8">
+
+		<title>mysecondui5project</title>
+
+		<script id="sap-ui-bootstrap"
+		    src="https://sapui5.hana.ondemand.com/1.38.16/resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-theme="sap_belize"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-resourceroots='{"com.sap.workflow.demo": "./"}'>
+		</script>
+		<script>
+		/*	sap.ui.getCore().attachInit(function() {
+				new sap.m.Shell({
+					app: new sap.ui.core.ComponentContainer({
+						height : "100%",
+						name : "com.sap.workflow.demo"
+					})
+				}).placeAt("content");
+			});*/
+			
+			sap.ui.getCore().attachInit(function () {
+			sap.ui.require([
+				"sap/ui/core/ComponentContainer"
+			], function (ComponentContainer) {
+				// initialize the UI component
+				var oComp = sap.ui.getCore().createComponent({
+			        name: "com.sap.workflow.demo",
+			        id: "myComponent"
+			    });
+
+				var oCompCont = new ComponentContainer({
+						component:oComp,
+						height:"100%"
+				});
+				
+				new sap.m.Shell({
+					app: oCompCont
+				}).placeAt("content");
+				oCompCont.placeAt("content");
+			});
+		});
+		</script>
+	</head>
+
+	<body class="sapUiBody" id="content">
+	</body>
+
+</html>

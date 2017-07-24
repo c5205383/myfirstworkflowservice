@@ -1,0 +1,59 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="com.sap.workflow.demo.controller.LeaderApprove" xmlns:html="http://www.w3.org/1999/xhtml">
+		<Page showHeader="false" title="Approve Employee" showNavButton="true" class="workflowpage" height="95%">
+				<content>
+					<Label text="{i18n>approve.leader.title}"></Label>
+					<VBox>
+						<HBox justifyContent="SpaceBetween" width="20%">
+						<Label text="Name: " class="fieldLabel"></Label>	
+						<Text text="{path: 'contextModel>/employee/name'}" maxLines="0"/>	
+						</HBox>
+						<HBox justifyContent="SpaceBetween" width="20%">
+						<Label text="Age"></Label>	
+						<Text text="{path: 'contextModel>/employee/age'}" maxLines="0"/>	
+						</HBox>
+						<HBox justifyContent="SpaceBetween" width="20%">
+						<Label text="Sex"></Label>	
+						<Text text="{path: 'contextModel>/employee/sex'}" maxLines="0"/>	
+						</HBox>
+						<HBox justifyContent="SpaceBetween" width="20%">
+						<Label text="Major"></Label>	
+						<Text text="{path: 'contextModel>/employee/major'}" maxLines="0"/>	
+						</HBox>
+					     <HBox justifyContent="SpaceBetween" width="20%">
+						<Label text="Speciality"></Label>	
+						<Text text="{path: 'contextModel>/employee/speciality'}" maxLines="0"/>	
+						</HBox>
+						<HBox justifyContent="SpaceBetween" width="20%">
+						<Label text="Height"></Label>	
+						<Text text="{path: 'contextModel>/employee/height'}" maxLines="0"/>	
+						</HBox>
+					    <HBox justifyContent="SpaceBetween" width="20%">
+						<Label text="Weight"></Label>	
+						<Text text="{path: 'contextModel>/employee/weight'}" maxLines="0"/>	
+						</HBox>
+					    <HBox justifyContent="SpaceBetween" width="20%">
+						<Label text="Request User Id"></Label>	
+						<Text text="{path: 'contextModel>/userId'}" maxLines="1"/>	
+						</HBox>
+						 <HBox justifyContent="SpaceBetween" width="20%">
+						<Label text="Manager User Id: "></Label>	
+						<Text text="{path: 'contextModel>/manager'}" maxLines="1"/>	
+						</HBox>
+					</VBox>
+						<VBox>
+						<HBox justifyContent="SpaceBetween" width="20%">
+								<Button
+								text="Approve"
+								type="Accept"
+								press="handleApproveEmployee" />
+								<Button
+								text="Reject"
+								type="Reject"
+								press="handleRejectEmployee" />
+							
+						</HBox>
+					</VBox>
+				</content>
+			</Page>
+</mvc:View>
